@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src = 'bower_components/angular/angular.js'></script>
+  <script>src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+  <script>
+  var app = angular.module('app', []);
+  app.controller('divController', ['$scope', function($scope){
+    //printController will show the current $scope
+    $scope.myName = "Jesse";
+    $scope.myFavoriteLanguage = "Javascript";
+    $scope.myFavoriteJSLibrary = "Angular";
+    $scope.printController = function(){
+      console.log($scope);
+    }
+  }]);
+  </script>
+</head>
+<body>
+    <div ng-controller='divController'>
+        <h3>Hello my name is {{ myName }}, my favorite Language is {{ myFavoriteLanguage }}, because the {{ myFavoriteJSLibrary }} library is awesome.</h3>
+    </div>
+</body>
+</html>
